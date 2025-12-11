@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Suggest a Resource | Oxford Community Resource Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <span class="logo-icon">OC</span>
+      <div class="logo-text">
+        <h1>Oxford Community Resource Hub</h1>
+        <p class="tagline">Help us keep this hub up to date.</p>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Browse Resources</a>
+      <a href="suggest.html" class="active">Suggest a Resource</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <h2>Suggest a New Resource</h2>
+      <p class="section-intro">
+        Know about an organization, program, or service that should be listed?
+        Share it here so we can review and add it to the hub.
+      </p>
+
+      <form id="suggestForm" class="form-card">
+        <div class="form-row">
+          <label for="orgName">Organization / Resource Name <span class="required">*</span></label>
+          <input type="text" id="orgName" name="orgName" required />
+        </div>
+
+        <div class="form-row">
+          <label for="orgCategory">Category <span class="required">*</span></label>
+          <select id="orgCategory" name="orgCategory" required>
+            <option value="">Select a category</option>
+            <option>Food & Basic Needs</option>
+            <option>Housing & Shelter</option>
+            <option>Health & Wellness</option>
+            <option>Mental Health</option>
+            <option>Education & Tutoring</option>
+            <option>Youth & Families</option>
+            <option>Employment & Legal</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="orgAudience">Who does it serve? <span class="required">*</span></label>
+          <input
+            type="text"
+            id="orgAudience"
+            name="orgAudience"
+            placeholder="e.g., families, teens, seniors, college students"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="orgCost">Cost</label>
+          <select id="orgCost" name="orgCost">
+            <option>Unknown / varies</option>
+            <option>Free</option>
+            <option>Low-cost</option>
+            <option>Sliding scale</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="orgWebsite">Website or social media link</label>
+          <input type="url" id="orgWebsite" name="orgWebsite" placeholder="https://example.org" />
+        </div>
+
+        <div class="form-row">
+          <label for="orgAddress">Address or service area</label>
+          <input type="text" id="orgAddress" name="orgAddress" placeholder="Street, city, or area served" />
+        </div>
+
+        <div class="form-row">
+          <label for="orgContact">Contact information</label>
+          <input type="text" id="orgContact" name="orgContact" placeholder="Phone number or email" />
+        </div>
+
+        <div class="form-row">
+          <label for="orgDescription">Short description <span class="required">*</span></label>
+          <textarea
+            id="orgDescription"
+            name="orgDescription"
+            rows="4"
+            placeholder="What does this resource provide?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="orgHowHeard">How did you hear about this resource?</label>
+          <input type="text" id="orgHowHeard" name="orgHowHeard" />
+        </div>
+
+        <div class="form-row">
+          <label for="yourName">Your name (optional)</label>
+          <input type="text" id="yourName" name="yourName" />
+        </div>
+
+        <button class="btn primary" type="submit">Submit Suggestion</button>
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Oxford Community Resource Hub</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById("suggestForm");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      message.textContent = "Please fill in all required fields before submitting.";
+      message.classList.add("error");
+      return;
+    }
+
+    // For TSA, we simulate submission.
+    // In a real deployment, this could send data to a Google Form or server.
+    message.textContent =
+      "Thank you! Your suggestion has been received. Our team will review it before adding it to the hub.";
+    message.classList.remove("error");
+    message.classList.add("success");
+
+    form.reset();
+  });
+</script>
+</body>
+</html>
