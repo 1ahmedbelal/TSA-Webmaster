@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browse Resources | Oxford Community Resource Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <span class="logo-icon">OC</span>
+      <div class="logo-text">
+        <h1>Oxford Community Resource Hub</h1>
+        <p class="tagline">Browse local support services and programs.</p>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="resources.html" class="active">Browse Resources</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <h2>Community Resource Directory</h2>
+      <p class="section-intro">
+        Use the search and filters below to find resources in Oxford and Lafayette County.
+      </p>
+
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <label for="searchInput">Search by name or keyword</label>
+          <input type="text" id="searchInput" placeholder="e.g., food, tutoring, counseling" />
+        </div>
+
+        <div class="filter-group">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option value="Food & Basic Needs">Food &amp; Basic Needs</option>
+            <option value="Housing & Shelter">Housing &amp; Shelter</option>
+            <option value="Health & Wellness">Health &amp; Wellness</option>
+            <option value="Mental Health">Mental Health</option>
+            <option value="Education & Tutoring">Education &amp; Tutoring</option>
+            <option value="Youth & Families">Youth &amp; Families</option>
+            <option value="Employment & Legal">Employment &amp; Legal</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="costFilter">Cost</label>
+          <select id="costFilter">
+            <option value="all">Any cost</option>
+            <option value="Free">Free</option>
+            <option value="Low-cost">Low-cost</option>
+            <option value="Sliding scale">Sliding scale</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="audienceFilter">Serves</label>
+          <select id="audienceFilter">
+            <option value="all">Anyone</option>
+            <option value="Children & Teens">Children &amp; Teens</option>
+            <option value="College Students">College Students</option>
+            <option value="Adults">Adults</option>
+            <option value="Seniors">Seniors</option>
+            <option value="Families">Families</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results count -->
+      <p id="resultsCount" class="results-count"></p>
+
+      <!-- Resource cards will be injected here -->
+      <div id="resourceList" class="card-grid resource-grid">
+        <!-- JS will populate -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Oxford Community Resource Hub</p>
+  </div>
+</footer>
+
+<script src="resources.js"></script>
+<script src="directory.js"></script>
+</body>
+</html>
+
